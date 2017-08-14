@@ -88,8 +88,10 @@
 		</div>
 
 		<div class="form-group">
-			{!! Form::submit('ENVIAR', ['class' => 'btn btn-primary']) !!}
-			<a href="{{action('CRUDController@index')}}" class="btn btn-info">Volver</a>
+			<span class="col-md-5"></span>
+			{!! Form::button('<i class="fa fa-save" aria-hidden="true"></i> Guardar', array('type' => 'submit', 'class' => 'btn btn-primary col-md-1')) !!}
+			<a href="{{action('CRUDController@index')}}" class="btn btn-info col-md-1"><i class="fa fa-backward" aria-hidden="true"></i> Volver</a>
+			<span class="col-md-5"></span>
 		</div>
 		
 	{!! Form::close() !!}

@@ -1,3 +1,24 @@
+INSTALAR HOMESTEAD:
+https://www.youtube.com/playlist?list=PL9MmQZkQEHUmggPlz37fGCTKhdS-mY2dy
+
+PERSONALIZAR SUBLIME TEXT PAR TRABAjAR CON PHP
+https://manuais.iessanclemente.net/index.php/Tutorial_sobre_editor_Sublime_Text_3
+
+https://styde.net/instalar-php-code-sniffer-en-sublime-text/
+luego instalar el plugin php-cs-fixer y ejecutar el analisis del codigo con ctrl+alt+f
+https://styde.net/php-companion-para-sublime-text-3/
+https://packagecontrol.io/packages/SublimeLinter-csslint
+
+https://quickadminpanel.com/blog/course-lesson-1-laravel-and-default-auth/
+
+INSTALAR FONT AWESOME
+	a) instalar nodejs en la compu de desarrollo
+	b) npm install en la raiz del proyecto
+	c) npm install font-awesome --save-dev en la misma raiz del proyecto
+	d) Habilitar el uso de font-awesome con Laravel Mix: 
+		https://laracasts.com/discuss/channels/general-discussion/fontawesome-with-webpack-and-laravel-54-wrong-path-to-fonts
+	f) npm run dev
+
 0) INSTALAR COMPOSER Y AGREGAR EN $PATH Y OPTIMIZAR VELOCIDAD
 
 	https://stackoverflow.com/a/28597678

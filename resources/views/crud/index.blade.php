@@ -11,9 +11,9 @@
           <div class="panel-body">
 
             @if((Auth::user()->role === 'admin') || (Auth::user()->role === 'supervisor') || (Auth::user()->role === 'editor'))
-              <a id="boton" href="{{action('CRUDController@create')}}" class="btn btn-primary">Nuevo registro</a>
+              <a id="boton" href="{{action('CRUDController@create')}}" class="btn btn-primary"><i class="fa fa-plus-square" aria-hidden="true"></i> Nuevo registro</a>
             @elseif(Auth::user()->role === '')
-              <a id="boton" class="btn btn-primary" disabled="disabled">Nuevo registro</a>
+              <a id="boton" class="btn btn-primary" disabled="disabled"><i class="fa fa-plus-square" aria-hidden="true"></i> Nuevo registro</a>
             @endif
 
             @include('crud.includes.info')
@@ -130,7 +130,7 @@
           //https://datatables.net/reference/option/columns.searchable
           //https://stackoverflow.com/questions/30299202/crud-laravel-5-how-to-link-to-destroy-of-resource-controller
           //https://stackoverflow.com/questions/43842996/delete-a-value-from-a-laravel-5-4-database
-          return '@if(Auth::user()->role === 'admin')<a href={{ URL::to("crud") }}/'+row.id+'/edit button type="button" class="btn btn-warning btn-xs delete-user">Editar</a><form method="POST" action="{{ URL::to("destroy") }}/'+row.id+'"><input type="hidden" name="_method" value="delete"><input type="hidden" name="_token" value="{{ csrf_token() }}"><button class="btn btn-danger btn-xs">Borrar</button></form>@elseif((Auth::user()->role === 'supervisor') || (Auth::user()->role === 'editor'))<a href={{ URL::to("crud") }}/'+row.id+'/edit button type="button" class="btn btn-warning btn-xs delete-user">Editar</a><a class="btn btn-danger btn-xs delete-user" disabled="disabled">Borrar</a>@elseif(Auth::user()->role === '')<a class="btn btn-warning btn-xs edit-user" disabled="disabled">Editar</a><a class="btn btn-danger btn-xs delete-user" disabled="disabled">Borrar</a>@endif';}},
+          return '@if(Auth::user()->role === 'admin')<a href={{ URL::to("crud") }}/'+row.id+'/edit button type="button" class="btn btn-info btn-xs delete-user"><i class="fa fa-edit" aria-hidden="true"></i> Editar</a><form method="POST" action="{{ URL::to("destroy") }}/'+row.id+'"><input type="hidden" name="_method" value="delete"><input type="hidden" name="_token" value="{{ csrf_token() }}"><button class="btn btn-danger btn-xs"><i class="fa fa-trash-o" aria-hidden="true"></i> Borrar</button></form>@elseif((Auth::user()->role === 'supervisor') || (Auth::user()->role === 'editor'))<a href={{ URL::to("crud") }}/'+row.id+'/edit button type="button" class="btn btn-info btn-xs delete-user"><i class="fa fa-edit" aria-hidden="true"></i> Editar</a><a class="btn btn-danger btn-xs delete-user" disabled="disabled"><i class="fa fa-trash-o" aria-hidden="true"></i> Borrar</a>@elseif(Auth::user()->role === '')<a class="btn btn-warning btn-xs edit-user" disabled="disabled"><i class="fa fa-edit" aria-hidden="true"></i> Editar</a><a class="btn btn-danger btn-xs delete-user" disabled="disabled"><i class="fa fa-trash-o" aria-hidden="true"></i> Borrar</a>@endif';}},
         {data: 'VOTO'},
         {data: 'CEDULA'},
         {data: 'TELEFONO'},

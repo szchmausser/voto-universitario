@@ -3,7 +3,7 @@
 		<button type="button" class="close" data-dismiss="alert">
 			<span>&times;</span>
 		</button>
-		<span>Hay errores en el formulario, por favor revise los mensajes...</span>
+		<span><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Hay errores en el formulario, por favor revise los mensajes...</span>
 	</div>
 @endif
 
