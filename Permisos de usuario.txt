@@ -1,0 +1,29 @@
+Admin
+	Crear
+	Editar (total)
+	Borrar
+
+Supervisor
+	Crear
+	Editar (total)
+	No Borrar
+
+Editor
+	Crear
+	Editar (parcial)
+	No Borrar
+
+Invitado
+	No Crear
+	No Editar
+	No Borrar
+
+//Autenticacion en laravel
+https://medium.com/@ezp127/laravel-5-4-native-user-authentication-role-authorization-3dbae4049c8a
+https://scotch.io/tutorials/user-authorization-in-laravel-54-with-spatie-laravel-permission
+https://laravel-news.com/authorization-gates
+
+https://laraveles.com/foro/viewtopic.php?id=4243
+
+//Personalizar mensaje de acceso no autorizado 401
+https://stackoverflow.com/questions/42684854/laravel-5-4-custom-page-for-notfoundhttpexception

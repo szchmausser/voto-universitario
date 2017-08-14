@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ app()->getLocale() }}">
+<html lang="{{ config('app.locale') }}">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -65,6 +65,15 @@
         </style>
     </head>
     <body>
+
+    <form action="{{ url('/afiliados') }}" method="post">
+        
+        <!--<input type="hidden" name="_token" value="{{ csrf_token() }}">-->
+        {!! csrf_field() !!}
+        <button type="submit">enviar</button>
+
+    </form>
+
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">

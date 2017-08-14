@@ -1,0 +1,296 @@
+INSTALAR HOMESTEAD:
+https://www.youtube.com/playlist?list=PL9MmQZkQEHUmggPlz37fGCTKhdS-mY2dy
+
+PERSONALIZAR SUBLIME TEXT PAR TRABAjAR CON PHP
+https://manuais.iessanclemente.net/index.php/Tutorial_sobre_editor_Sublime_Text_3
+
+https://styde.net/instalar-php-code-sniffer-en-sublime-text/
+luego instalar el plugin php-cs-fixer y ejecutar el analisis del codigo con ctrl+alt+f
+https://styde.net/php-companion-para-sublime-text-3/
+https://packagecontrol.io/packages/SublimeLinter-csslint
+
+https://quickadminpanel.com/blog/course-lesson-1-laravel-and-default-auth/
+
+0) INSTALAR COMPOSER Y AGREGAR EN $PATH Y OPTIMIZAR VELOCIDAD
+
+	https://stackoverflow.com/a/28597678
+
+		Got fixed after setting path for composer vendors.So the correct step which worked is,
+
+		Download laravel installer: composer global require "laravel/installer=~1.1"
+
+		Setup PATH: export PATH="~/.composer/vendor/bin:$PATH"
+
+		Then run command : laravel new project-name or sudo laravel new project-name
+
+		For mac,
+
+		echo 'export PATH="$HOME/.composer/vendor/bin:$PATH"' > ~/.bashrc
+		source ~/.bashrc
+
+		Ubuntu 16.04 with latest laravel installer
+
+		Install composer if not exists,
+
+		php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+		php -r "if (hash_file('SHA384', 'composer-setup.php') === '55d6ead61b29c7bdee5cccfb50076874187bd9f21f65d8991d46ec5cc90518f447387fb9f76ebae1fbbacf329e583e30') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+		php composer-setup.php
+		php -r "unlink('composer-setup.php');"
+		sudo mv composer.phar /usr/local/bin/composer
+
+		Install laravel installer,
+
+		composer global require "laravel/installer"
+
+		Edit environment config,
+
+		nano .bashrc
+
+		Then add,
+
+		export PATH="$PATH:$HOME/.config/composer/vendor/bin"
+
+		Then reload path config,
+
+		source ~/.bashrc
+
+	https://github.com/hirak/prestissimo
+
+		$ composer global require hirak/prestissimo
+
+1) CREAR VIRTUALHOST EN XAMPP
+
+	Necesario ejecutar laravel sobre VHost, ya que si no la instalacion de Admin-LTE se hara correctamente pero este fallara en su funcionamiento. La deduccion de porque se produce este error lo inferi por un fallo de rutas mostrado en el video (https://www.youtube.com/watch?v=E7OYcHCGkXw), en el cual la autenticacion fallaba por una ruta relativa mal formada en hoja de estilos, lo cual sugirio que el mal funcionamiento de Admin-LTE se debia a ese mismo motivo.
+
+	http://todoprogramacion.com.ve/articulos/apache/crear-dominios-virtuales-en-windows-con-xampp
+
+		Los dominios virtuales nos permiten navegar en una aplicación local utilizando un dominio con el nombre y extensión que deseemos, es por ello que son llamados virtuales.
+
+		Esto trae algunas ventajas como lo son obtener rutas muy similares a las que utilizaremos en la aplicación en producción y en especial al trabajar con AJAX evitaremos posibles problemas al no tener que hacer llamados mediante la URL http://localhost/aplicacion sino mediante http://aplicacion.dev.
+
+		El procedimiento para crear dominios virtuales en Windows utilizando XAMPP es relativamente sencillo. Si posees un servidor diferente a XAMPP puede que los pasos a seguir sean un poco diferentes.
+
+		Crear el dominio en el servidor Apache
+		En una instalación típica de XAMPP nos dirigimos a C:\xampp\apache\conf\extra.
+
+		Allí observaremos varios archivos. Debemos abrir el que posee el nombre httpd-vhosts.conf.
+
+		Dentro de este archivo debemos observar unas líneas similares a estas:
+
+		##<VirtualHost *:80>
+		 ##ServerAdmin webmaster@dummy-host2.example.com
+		 ##DocumentRoot "C:/xampp/htdocs/dummy-host2.example.com"
+		 ##ServerName dummy-host2.example.com
+		 ##ErrorLog "logs/dummy-host2.example.com-error.log"
+		 ##CustomLog "logs/dummy-host2.example.com-access.log" common
+		##</VirtualHost>
+		Estás líneas son ejemplos de como podemos crear nuestros dominios virtuales. Es por ello que al final de dicho archivo colocaremos lo siguiente:
+
+		<VirtualHost *:80>
+		 DocumentRoot "C:/xampp/htdocs/aplicacion"
+		 ServerName aplicacion.dev
+		</VirtualHost>
+		Luego debemos modificar (con permisos de administrador) el archivo hosts de nuestro sistema operativo. 
+
+		Tal archivo se encuentra en C:\Windows\System32\Drivers\etc. Al final del archivo hosts debemos colocar lo siguiente:
+
+		127.0.0.1     aplicacion.dev
+		La IP especificada es la de nuestro servidor local, luego separado por espacios debe ir el nombre que le dimos al dominio virtual. Puedes crear tantos como desees siempre y cuando no sea un dominio real, ya que perderás la posibilidad de acceder a tal dominio, es decir, si creas un dominio virtual llamado google.com ya no podrás acceder al buscador.
+
+		Nota: Si el sistema operativo no les permite modificar el archivo hosts, copiénlo en otra dirección, modifiquenlo y luego sustituyan el original por la nueva versión.
+
+		Finalmente reinician el servidor Apache y al abrir la dirección http://aplicacion.dev podrán acceder a su aplicación.
+
+2) CORREGIR ERROR TOO LONG
+
+https://laravel-news.com/laravel-5-4-key-too-long-error
+
+	As outlined in the Migrations guide to fix this all you have to do is edit your AppServiceProvider.php file and inside the boot method set a default string length:
+
+	use Illuminate\Support\Facades\Schema;
+
+	public function boot()
+	{
+	   Schema::defaultStringLength(191);
+	}
+
+3) INSTALAR AUTH
+
+ 	Crear base de datos
+	Editar .env con acceso a DB
+	php artisan make:auth
+	php artisan migrate
+
+4) CREAR PRIMER USUARIO EN BASE DE DATOS PARA ACCEDER MEDIANTE AUTH
+
+	https://stackoverflow.com/questions/34382043/laravel-how-do-i-insert-the-first-user-in-the-database
+
+		I'm doing it this way:
+
+		creating seeder with artisan:
+
+		php artisan make:seeder UsersTableSeeder
+		then you open the file and you enter users:
+
+		use Illuminate\Database\Seeder;
+
+		class UsersTableSeeder extends Seeder
+		{
+		   /**
+		    * Run the database seeds.
+		    *
+		    * @return void
+		    */
+		   public function run()
+		   {
+		       DB::table('users')->insert([
+		           'name' => 'User1',
+		           'email' => 'user1@email.com',
+		           'password' => bcrypt('password'),
+		       ]);
+		       DB::table('users')->insert([
+		           'name' => 'user2',
+		           'email' => 'user2@email.com',
+		           'password' => bcrypt('password'),
+		       ]);
+		   }
+		}
+		If you want to generate random list of users, you can use factories:
+
+		use Illuminate\Database\Seeder;
+
+		class UsersTableSeeder extends Seeder
+		{
+		   /**
+		    * Run the database seeds.
+		    *
+		    * @return void
+		    */
+		   public function run()
+		   {
+		       factory(App\User::class, 50)->create();
+		       /* or you can add also another table that is dependent on user_id:*/
+		      /*factory(App\User::class, 50)->create()->each(function($u) {
+		           $userId = $u->id;
+		           DB::table('posts')->insert([
+		               'body' => str_random(100),
+		               'user_id' => $userId,
+		           ]);
+		       });*/
+		   }
+		}
+		Then in the file app/database/seeds/DatabaseSeeder.php uncomment or add in run function a line:
+
+		$this->call(UsersTableSeeder::class);
+		it will look like this:
+
+		use Illuminate\Database\Seeder;
+
+		class DatabaseSeeder extends Seeder
+		{
+		   /**
+		    * Run the database seeds.
+		    *
+		    * @return void
+		    */
+		   public function run()
+		   {
+		       $this->call(UsersTableSeeder::class);
+		   }
+		}
+		At the end you run:
+
+		php artisan db:seed
+		or
+
+		php artisan db:seed --class=UsersTableSeeder
+		I hope will help someone. PS: this was done on Laravel 5.3
+
+5) INSTALAR ADMIN-LTE EN LARAVEL 5.4
+
+$ adminlte-laravel install
+$ php artisan adminlte:publish
+
+6) CORREGIR ERROR EN INSTALACION DE ADMIN-LTE
+
+	En este paso se produce un fallo. Agrego historial de consola:
+
+		Vioscar@Vioscar-PC /cygdrive/c/xampp/htdocs/laravel-lte
+		$ adminlte-laravel install
+		llum package AdminLTE
+		Running composer require acacha/admin-lte-template-laravel
+		   1/3:        http://packagist.org/p/provider-2017-07$313cf295bbdc1c43b3b46a6f                                                                                                 5dd926b42b1b81878f1562d11f5028072307af68.json
+		   2/3:        http://packagist.org/p/provider-latest$ace0848c71db10326f12883cf                                                                                                 272175abe8efb676ef12946236484cd0d03e059.json
+		   3/3:        http://packagist.org/p/provider-2017-04$ca5be437f20e2e7b1738a349                                                                                                 0522c121b2780290767ac9099f9946710e4a31ab.json
+		   Finished: success: 3, skipped: 0, failure: 0, total: 3
+		Using version ^4.1 for acacha/admin-lte-template-laravel
+		./composer.json has been updated
+		Loading composer repositories with package information
+		Updating dependencies (including require-dev)
+		Nothing to install or update
+		Generating optimized autoload files
+		> Illuminate\Foundation\ComposerScripts::postUpdate
+		> php artisan optimize
+		Generating optimized class loader
+		The compiled services file has been removed.
+		Adding Acacha\AdminLTETemplateLaravel\Providers\AdminLTETemplateServiceProvider::class to Laravel config app.php file
+		El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos.Adding Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::class to Laravel config app.php file
+
+
+		 [Symfony\Component\Console\Exception\CommandNotFoundException]
+		 There are no commands defined in the "adminlte-laravel" namespace.
+
+
+		Vioscar@Vioscar-PC /cygdrive/c/xampp/htdocs/laravel-lte
+
+	Para corregirlo, hice los pasos como si de una instalacion manual se tratara, los cuales estan en la pagina oficial de github para laravel 5.4:
+
+	https://github.com/acacha/adminlte-laravel
+
+		To register the Service Provider edit config/app.php file and add to providers array:
+
+		/*
+		* Acacha AdminLTE template provider
+		*/
+		Acacha\AdminLTETemplateLaravel\Providers\AdminLTETemplateServiceProvider::class,
+		To Register Alias edit config/app.php file and add to alias array:
+
+		/*
+		* Acacha AdminLTE template alias
+		*/
+		'AdminLTE' => Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::class,
+		Publish files with:
+
+		php artisan vendor:publish --tag=adminlte --force
+
+7) HACER FUNCIONAR COMANDOS CON ARTISAN DENTRO DE ADMIN-LTE (en pruebas)
+
+https://github.com/acacha/adminlte-laravel/issues/267
+
+8) EDITAR VISTA PRINCIPAL DE ADMIN-LTE
+
+	- Editar acciones en el HomeController.php dentro de app/Http/Controllers
+	- Editar home.blade.php dentro de resources/views/vendor/adminlte
+
+9) CONSIDERACION IMPORTANTE ACERCA DE LAS MIGRACIONES
+
+	https://laravel.com/docs/5.4/migrations#modifying-columns
+	
+		Instalar con composer doctrine/dbal para poder modificar la estructura de tablas a traves de migraciones...
+
+		composer require doctrine/dbal
+
+	https://laraveles.com/foro/viewtopic.php?id=1374
+
+		"si es asi es un poco fastidioso usar el artisan, no seria mejor usar directamente el phpmyadmin??? u Existe otra manera de actualizar los campos mediante consola??...¿Que otra solucion existe? Agradeceria su ayuda"
+
+		"Lo estás haciendo bien, esa es la forma de hacerlo. Esto no se trata de un sistema ágil, es decir, no vas a tardar menos que utilizando tu gestor y añadir o modificar los campos. Tiene otras ventajas... Te permite realizar cambios que tus compañeros de equipo solo tendrán que ejecutar "php artisan migrate" y tendrán la misma estructura de BD que tú. Instalar tu bd en un servidor será tan fácil como ejecutar ese comando también. Regresar a un estado anterior de la base de datos...."
+
+10) DOCUMENTACION
+
+Bootstrap
+http://librosweb.es/libro/bootstrap_3/
+https://www.w3schools.com/bootstrap/default.asp
+
+Admin-lte
+https://adminlte.io/themes/AdminLTE/documentation/

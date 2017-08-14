@@ -5,6 +5,15 @@
 
     RewriteEngine On
 
+    #REMOVER index.php DE LA URL
+    #https://stackoverflow.com/a/32359226
+
+    RewriteBase /
+    RewriteCond %{THE_REQUEST} /index [NC]    
+    RewriteRule ^ / [R=302,L,NE]
+
+    #FIN REMOVER index.php DE LA URL
+
     # Redirect Trailing Slashes If Not A Folder...
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^(.*)/$ /$1 [L,R=301]
