@@ -19,26 +19,21 @@
     <link href="{{ asset('datatables/Buttons-1.3.1/css/buttons.dataTables.min.css') }}" rel="stylesheet">
 
     <style type="text/css" media="screen">
-
-        @font-face{
-            font-family:'Raleway';
-            src: url('fonts/Raleway-Light.ttf')
-        }
-        .encabezado{
+    /* Hacer un area de la pagina deslizable */
+    /* https://stackoverflow.com/questions/1193414/scrolling-a-div-with-jquery */
+      .encabezado{
         margin: 10px;
-        }
-        #boton{
+      }
+      #boton{
         margin-top: 10px;
         margin-bottom: 10px;
         width: 100%;
-        }
-        /* Hacer un area de la pagina deslizable */
-        /* https://stackoverflow.com/questions/1193414/scrolling-a-div-with-jquery */
-        .scrollable{
+      }
+      .scrollable{
         width: 90%px;
         height: 90%px;
         overflow-x: scroll;
-        }
+      }
     </style>
 
 </head>

@@ -1,0 +1,79 @@
+* Registro de Linea: 
+
+	RIF
+	Nombre
+	Estado
+	Municipio
+	Parroquia
+	Direccion
+	Telefono
+	Correo
+
+* Registro de vehiculos:
+
+	Placa
+	Serial_carroceria
+	Marca
+	Modelo
+	Año
+	Modalidad		(Taxi, Por puesto)
+	Tipo_caucho
+	Tipo_bateria
+	Tipo_aceite
+
+* Registro de Taxista:
+
+	C.I
+	Nombres
+	Apellidos
+	RIF
+	Telefono
+	Correo
+	Estado
+	Municipio
+	Parroquia
+	Direccion
+	Fecha_nacimiento
+	Rol 					(Presidente/Afiliado)
+	Fecha_registro
+	Linea(id_linea)
+	Vehiculo(id_vehiculo)
+
+* Registro de Pagos:
+
+	id
+	id_taxista
+	mes_pago
+	Monto
+	updated_at
+	created_at
+
+		id_taxista: 1
+		mes_pago: 30/9/2016
+		monto: 5000
+		updated_at
+		created_at
+
+		id_taxista: 1
+		mes_pago: 31/10/2016
+		monto: 5000
+		updated_at
+		created_at
+
+		id_taxista: 1
+		mes_pago: 30/11/2016
+		monto: 6000
+		updated_at
+		created_at
+
+		id_taxista: 1
+		mes_pago: 31/12/2016
+		monto: 6500
+		updated_at
+		created_at
+
+		id_taxista: 2
+		mes_pago: 01/01/2017
+		monto: 8000
+		updated_at
+		created_at

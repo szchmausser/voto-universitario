@@ -1,7 +1,7 @@
 <?php
+
 use Illuminate\Database\Seeder;
-//Usar el model Crud en este seeder
-use App\Crud;
+use App\Crud; //Usar el model Crud en este seeder
 
 class CrudsTableSeeder extends Seeder
 {

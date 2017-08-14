@@ -24,6 +24,7 @@ use App\Http\Requests\CrudRequest;
 
 class CRUDController extends Controller
 {
+
     public function __construct()
     {
         $this->middleware('auth');
@@ -36,12 +37,12 @@ class CRUDController extends Controller
      */
     public function index()
     {
-        $cruds=Crud::all()->toArray();
 
+        $cruds = Crud::all()->toArray();
         return view('crud.index', compact('cruds'));
     }
 
-    public function datatable()
+    public function get_datatable()
     {
         // Using Eloquent
         return Datatables::eloquent(Crud::query())->make(true);
@@ -89,7 +90,7 @@ class CRUDController extends Controller
     public function edit($id)
     {
         $crud = Crud::find($id);
-        return view('crud.edit', compact('crud', 'id'));
+        return view('crud.edit', compact('crud','id'));
     }
 
     /**
@@ -118,17 +119,18 @@ class CRUDController extends Controller
      */
     public function destroy($id)
     {
-        $crud = Crud::find($id);
-        $crud->delete();
+      $crud = Crud::find($id);
+      $crud->delete();
 
-        return redirect()->to('crud')->with('info', 'El registro fue eliminado exitosamente');
+      return redirect()->to('crud')->with('info', 'El registro fue eliminado exitosamente');
     }
 
-    public function descargarPDF($id)
-    {
-        $crud = Crud::find($id);
-        $pdf = PDF::loadView('crud.pdf', compact('crud'));
-        return $pdf->download('invoice.pdf');
+    public function descargarPDF($id){
+      
+      $crud = Crud::find($id);
+      $pdf = PDF::loadView('crud.pdf', compact('crud'));
+      return $pdf->download('invoice.pdf');
+
     }
 
     public function logout(Request $request)
@@ -136,4 +138,5 @@ class CRUDController extends Controller
         Auth::logout();
         return redirect('/crud');
     }
+
 }

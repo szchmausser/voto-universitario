@@ -6,8 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Crud extends Model
 {
-    //Simplemente definimos el nombre de la tabla, los campos que pueden ser asignamos manualmente y los que no ($fillable / $guarded).
-    protected $table = 'cruds';
+	//Simplemente definimos el nombre de la tabla, los campos que pueden ser asignamos manualmente y los que no ($fillable / $guarded).
+
+    protected $table = 'cruds'; 
 
     public $primaryKey = 'id';
     

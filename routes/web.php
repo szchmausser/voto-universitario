@@ -21,9 +21,9 @@ Route::delete('/destroy/{id}', 'CRUDController@destroy');
 
 Route::resource('crud', 'CRUDController');
 
-Route::get('/descargarpdf/{id}', 'CRUDController@DescargarPDF');
+Route::get('/descargarpdf/{id}','CRUDController@DescargarPDF');
 
-Route::get('datatable', 'CRUDController@datatable');
+Route::get('datatable','CRUDController@get_datatable');
 
 /*******************************************************************************/
 /*Eliminar index.php de la url de la aplicacion cuando se accede por IP*/

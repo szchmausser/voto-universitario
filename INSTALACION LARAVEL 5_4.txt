@@ -1,16 +1,3 @@
-INSTALAR HOMESTEAD:
-https://www.youtube.com/playlist?list=PL9MmQZkQEHUmggPlz37fGCTKhdS-mY2dy
-
-PERSONALIZAR SUBLIME TEXT PAR TRABAjAR CON PHP
-https://manuais.iessanclemente.net/index.php/Tutorial_sobre_editor_Sublime_Text_3
-
-https://styde.net/instalar-php-code-sniffer-en-sublime-text/
-luego instalar el plugin php-cs-fixer y ejecutar el analisis del codigo con ctrl+alt+f
-https://styde.net/php-companion-para-sublime-text-3/
-https://packagecontrol.io/packages/SublimeLinter-csslint
-
-https://quickadminpanel.com/blog/course-lesson-1-laravel-and-default-auth/
-
 0) INSTALAR COMPOSER Y AGREGAR EN $PATH Y OPTIMIZAR VELOCIDAD
 
 	https://stackoverflow.com/a/28597678
