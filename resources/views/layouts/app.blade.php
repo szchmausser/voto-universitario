@@ -34,6 +34,9 @@
         height: 90%px;
         overflow-x: scroll;
       }
+      .anchofijo{
+        width: 60px;
+      }
     </style>
 
 </head>
