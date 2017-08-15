@@ -11372,3 +11372,32 @@ button.close {
 .anchofijo {
   width: 65px;
 }
+
+/* all */
+::-webkit-input-placeholder {
+  font-size: 10px;
+  font-family: 'arial', sans-serif;
+  color: #000;
+}
+
+::-moz-placeholder {
+  font-size: 10px;
+  font-family: 'arial', sans-serif;
+  color: #000;
+}
+
+
+/* firefox 19+ */
+:-ms-input-placeholder {
+  font-size: 10px;
+  font-family: 'arial', sans-serif;
+  color: #000;
+}
+
+
+/* ie */
+input:-moz-placeholder {
+  font-size: 10px;
+  font-family: 'arial', sans-serif;
+  color: #000;
+}
