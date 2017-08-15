@@ -141,7 +141,7 @@
       ],
       language: { /*https://datatables.net/reference/option/language*/
         "search": "_INPUT_",
-        "searchPlaceholder": "Búsqueda general...", /*https://datatables.net/reference/option/language.searchPlaceholder*/
+        "searchPlaceholder": "REALIZAR UNA BÚSQUEDA GENERAL...", /*https://datatables.net/reference/option/language.searchPlaceholder*/
         "sProcessing":     "Procesando...",
         "sLengthMenu":     "Mostrar _MENU_ registros",
         "sZeroRecords":    "No se encontraron resultados",
