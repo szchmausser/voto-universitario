@@ -74,6 +74,10 @@
 
   $(document).ready(function() {
 
+    //Establecer formato de fecha en español para moment.js
+    //http://momentjs.com/docs/#/i18n/
+    moment.locale('es');
+
     $('#users-table').DataTable({
       processing: true,
       serverSide: true,
@@ -85,15 +89,54 @@
       //l - Length changing | f - Filtering input | t - The Table! | i - Information | p - Pagination | r - pRocessing
       //< and > - div elements | <"#id" and > - div with an id | <"class" and > - div with a class | <"#id.class" and > - div with an id and class
       pageLength: 10,
-      lengthMenu: [[10, 25, 50, 100, 250, 500, 1000, -1], [10, 25, 50, 100, 250, 500, 1000, "Todos"]],
+      lengthMenu: [
+        [10, 25, 50, 100, 250, 500, 1000, -1],
+        [10, 25, 50, 100, 250, 500, 1000,
+        "Todos"]
+      ],
       /*https://datatables.net/examples/basic_init/filter_only.html*/
       paging: true,
       /*https://stackoverflow.com/questions/13290626/datatable-hide-the-show-entries-dropdown-but-keep-the-search-box
       searching: false,*/
       buttons: [
-      /*https://datatables.net/reference/option/buttons.buttons.text#Examples*/
-        { extend: 'copy', text: 'Copiar listado al portapapeles' },
-        { extend: 'excel', text: 'Exportar a una hoja de calculo' },
+      /*https://datatables.net/reference/option/buttons.buttons.text#Examples
+      https://datatables.net/extensions/buttons/examples/html5/columns.html*/
+        { extend: 'copyHtml5',
+          title: 'Datos exportados',
+          text: 'Copiar al portapapeles',
+          exportOptions: {
+            columns: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 ]
+          } 
+        },
+        { extend: 'excelHtml5',
+            title: 'Datos exportados',
+            text: 'Exportar a hoja de calculo',
+            exportOptions: {
+              columns: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 ]
+            }
+        },
+        /*https://github.com/bpampuch/pdfmake/blob/master/README.md*/
+        { extend: 'pdfHtml5',
+            filename: 'datos_exportados',
+            title: 'RESULTADOS DE LA EXPORTACION:' + '\n' + moment().format('L'),
+            message: '',
+            text: 'Exportar a PDF',
+            orientation: 'landscape',
+            pageSize: 'LEGAL',
+            pageMargins: [ 10, 10, 10, 10 ],
+            exportOptions: {
+              columns: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 ]
+            },
+            /*https://stackoverflow.com/questions/40363322/how-to-style-title-in-exported-pdf-in-datatable*/
+            customize: function(doc) {
+              doc.styles.title = {
+                color: '#2D4154',
+                fontSize: '12',
+                background: 'white',
+                alignment: 'center'
+              }
+            }
+        },
         { extend: 'print', text: 'Imprimir' }
       ],
       language: { /*https://datatables.net/reference/option/language*/

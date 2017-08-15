@@ -9,6 +9,16 @@ CLONAR MI PROYECTO DESDE GITHUB
 	php artisan key:generate
 	php artisan config:clear
 
+NOTAS GIT
+https://elbauldelprogramador.com/mini-tutorial-y-chuleta-de-comandos-git/
+git status
+git add .
+git commit -m "Mensaje para los commits"
+git commit --amend -m "Corregir el mensaje del ultimo commit (antes de hacer push a github)"
+	- Para enviar el amend: git push --force origin master
+git push origin master
+
+
 INSTALAR HOMESTEAD:
 https://www.youtube.com/playlist?list=PL9MmQZkQEHUmggPlz37fGCTKhdS-mY2dy
 
