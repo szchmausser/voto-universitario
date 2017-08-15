@@ -1,0 +1,19 @@
+.encabezado {
+  margin: 10px;
+}
+
+#boton {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.scrollable {
+  width: 90%px;
+  height: 90%px;
+  overflow-x: scroll;
+}
+
+.anchofijo {
+  width: 65px;
+}

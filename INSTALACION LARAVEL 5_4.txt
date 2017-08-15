@@ -1,3 +1,14 @@
+CLONAR MI PROYECTO DESDE GITHUB
+	git clone git://github.com/szchmausser/voto-universitario.git pruebagithub
+
+	https://styde.net/configuracion-de-git-en-proyectos-de-laravel/
+	composer install
+	npm install
+	
+	https://github.com/laravel/framework/issues/9080#issuecomment-222083043
+	php artisan key:generate
+	php artisan config:clear
+
 INSTALAR HOMESTEAD:
 https://www.youtube.com/playlist?list=PL9MmQZkQEHUmggPlz37fGCTKhdS-mY2dy
 

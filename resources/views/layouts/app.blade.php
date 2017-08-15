@@ -11,33 +11,12 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/mix.css') }}" rel="stylesheet">
 
     <!--VIOSCAR-->
     <!--<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-2.2.4/jszip-3.1.3/dt-1.10.15/b-1.3.1/b-html5-1.3.1/b-print-1.3.1/datatables.min.css"/>-->
     <link href="{{ asset('datatables/DataTables-1.10.15/css/jquery.dataTables.min.css') }}" rel="stylesheet">
     <link href="{{ asset('datatables/Buttons-1.3.1/css/buttons.dataTables.min.css') }}" rel="stylesheet">
-
-    <style type="text/css" media="screen">
-    /* Hacer un area de la pagina deslizable */
-    /* https://stackoverflow.com/questions/1193414/scrolling-a-div-with-jquery */
-      .encabezado{
-        margin: 10px;
-      }
-      #boton{
-        margin-top: 10px;
-        margin-bottom: 10px;
-        width: 100%;
-      }
-      .scrollable{
-        width: 90%px;
-        height: 90%px;
-        overflow-x: scroll;
-      }
-      .anchofijo{
-        width: 60px;
-      }
-    </style>
 
 </head>
 <body>
