@@ -3,8 +3,7 @@
 }
 
 #boton {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   width: 100%;
 }
 
@@ -20,29 +19,21 @@
 
 /* all */
 ::-webkit-input-placeholder {
-  font-size: 10px;
-  font-family: 'arial', sans-serif;
-  color: #000;
+  font-size: 8px;
 }
 
 ::-moz-placeholder {
-  font-size: 10px;
-  font-family: 'arial', sans-serif;
-  color: #000;
+  font-size: 8px;
 }
 
 
 /* firefox 19+ */
 :-ms-input-placeholder {
-  font-size: 10px;
-  font-family: 'arial', sans-serif;
-  color: #000;
+  font-size: 8px;
 }
 
 
 /* ie */
 input:-moz-placeholder {
-  font-size: 10px;
-  font-family: 'arial', sans-serif;
-  color: #000;
+  font-size: 8px;
 }

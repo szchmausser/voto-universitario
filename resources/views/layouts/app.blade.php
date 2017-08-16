@@ -10,13 +10,7 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Styles -->
-    <link href="{{ asset('css/mix.css') }}" rel="stylesheet">
-
-    <!--VIOSCAR-->
-    <!--<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-2.2.4/jszip-3.1.3/dt-1.10.15/b-1.3.1/b-html5-1.3.1/b-print-1.3.1/datatables.min.css"/>-->
-    <link href="{{ asset('datatables/DataTables-1.10.15/css/jquery.dataTables.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('datatables/Buttons-1.3.1/css/buttons.dataTables.min.css') }}" rel="stylesheet">
+    @include('crud.includes.imports')
 
 </head>
 <body>
@@ -80,20 +74,5 @@
         @yield('content')
     </div>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
-
-    <!--VIOSCAR-->
-    <!--<script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-2.2.4/jszip-3.1.3/dt-1.10.15/b-1.3.1/b-html5-1.3.1/b-print-1.3.1/datatables.min.js"></script>-->
-    <script src="{{ asset('datatables/jQuery-2.2.4/jquery-2.2.4.min.js') }}"></script>
-    <script src="{{ asset('datatables/DataTables-1.10.15/js/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset('datatables/Buttons-1.3.1/js/dataTables.buttons.min.js') }}"></script>
-    <script src="{{ asset('js/jszip.min.js') }}"></script>
-    <script src="{{ asset('js/pdfmake.min.js') }}"></script>
-    <script src="{{ asset('js/vfs_fonts.js') }}"></script>
-    <script src="{{ asset('datatables/Buttons-1.3.1/js/buttons.print.min.js') }}"></script>
-    <script src="{{ asset('datatables/Buttons-1.3.1/js/buttons.html5.min.js') }}"></script>
-    <script src="{{ asset('js/moment.js') }}"></script>
-    <script src="{{ asset('js/moment-with-locales.js') }}"></script>
 </body>
 </html>

@@ -94,7 +94,8 @@
 		<div class="form-group">
 			<span class="col-md-5"></span>
 			{!! Form::button('<i class="fa fa-save" aria-hidden="true"></i> Editar', array('type' => 'submit', 'class' => 'btn btn-primary col-md-1')) !!}
-			<a href="{{action('CRUDController@index')}}" class="btn btn-info col-md-1"><i class="fa fa-backward" aria-hidden="true"></i> Volver</a>
+			<!-- https://laravel.io/forum/09-25-2014-how-to-get-font-awesome-icons-to-show-up-when-using-link-to-route -->
+			{!! Html::decode(link_to_route('index', '<i class="fa fa-backward" aria-hidden="true"></i> Volver', array(), ['class' => 'btn btn-info col-md-1'])) !!}
 			<span class="col-md-5"></span>
 		</div>
 
@@ -191,7 +192,8 @@
 		<div class="form-group">
 			<span class="col-md-5"></span>
 			{!! Form::button('<i class="fa fa-save" aria-hidden="true"></i> Editar', array('type' => 'submit', 'class' => 'btn btn-primary col-md-1')) !!}
-			<a href="{{action('CRUDController@index')}}" class="btn btn-info col-md-1"><i class="fa fa-backward" aria-hidden="true"></i> Volver</a>
+			<!-- https://laravel.io/forum/09-25-2014-how-to-get-font-awesome-icons-to-show-up-when-using-link-to-route -->
+			{!! Html::decode(link_to_route('index', '<i class="fa fa-backward" aria-hidden="true"></i> Volver', array(), ['class' => 'btn btn-info col-md-1'])) !!}
 			<span class="col-md-5"></span>
 		</div>
 

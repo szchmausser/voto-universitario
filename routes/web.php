@@ -15,15 +15,18 @@
     return view('welcome');
 });*/
 
-Route::get('/', 'CRUDController@index');
+/* COLOCAR NOMBRE A UNA RUTA (para usarla en los enlaces con Laravel Collective):
+https://laravel.com/docs/5.4/routing#named-routes
+https://laravel.io/forum/09-25-2014-how-to-get-font-awesome-icons-to-show-up-when-using-link-to-route */
+Route::get('/', 'CRUDController@index')->name('index');
 
 Route::delete('/destroy/{id}', 'CRUDController@destroy');
 
 Route::resource('crud', 'CRUDController');
 
-Route::get('/descargarpdf/{id}','CRUDController@DescargarPDF');
+Route::get('/descargarpdf/{id}', 'CRUDController@DescargarPDF');
 
-Route::get('datatable','CRUDController@get_datatable');
+Route::get('datatable', 'CRUDController@get_datatable');
 
 /*******************************************************************************/
 /*Eliminar index.php de la url de la aplicacion cuando se accede por IP*/
