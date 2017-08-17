@@ -4,5 +4,8 @@
   "/js/my_js.js": "/js/my_js.js",
   "/assets/js/app.js": "/assets/js/app.js",
   "/css/mix.css": "/css/mix.css",
-  "/mix.js": "/mix.js"
+  "/mix.js": "/mix.js",
+  "/js/jsapp.js": "/js/jsapp.js",
+  "/js/mix_app.js": "/js/mix_app.js",
+  "/css/mix_app.css": "/css/mix_app.css"
 }

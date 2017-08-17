@@ -11,14 +11,9 @@ const { mix } = require('laravel-mix');
  |
  */
 
-/*
-mix.js('resources/assets/js/vio/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css')
-;
-*/
-
-mix.sass('resources/assets/sass/app.scss', 'public/css')
+mix.js('resources/assets/js/app.js', 'public/js')
 	.scripts([
+	'public/js/app.js',
 	'resources/assets/js/vio/jquery-2.2.4.min.js',
 	'resources/assets/js/vio/jquery.dataTables.min.js',
 	'resources/assets/js/vio/dataTables.buttons.min.js',
@@ -29,11 +24,12 @@ mix.sass('resources/assets/sass/app.scss', 'public/css')
 	'resources/assets/js/vio/buttons.html5.min.js',
 	'resources/assets/js/vio/moment.min.js',
 	'resources/assets/js/vio/moment-with-locales.js'
-	], 'public/js/app.js')
-   .styles([
-		'public/css/app.css',
+	], 'public/js/mix_app.js')
+    .sass('resources/assets/sass/app.scss', 'public/css')
+    .styles([
+    	'public/css/app.css',
     	'resources/assets/css/jquery.dataTables.min.css',
     	'resources/assets/css/buttons.dataTables.min.css',
     	'resources/assets/css/my_css.css'
-	], 'public/css/app.css')
+	], 'public/css/mix_app.css')
 ;
