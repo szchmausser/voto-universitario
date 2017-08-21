@@ -1,3 +1,6 @@
+{{ Debugbar::addMessage('CONTENIDO DE LA VARIABLE', '$errors') }}
+{{ Debugbar::info($errors) }}
+
 @if((Auth::user()->role === 'admin') || (Auth::user()->role === 'supervisor' || (Auth::user()->role === 'editor')))
 
 	<!-- 

@@ -26,7 +26,7 @@ Route::resource('crud', 'CRUDController');
 
 Route::get('/descargarpdf/{id}', 'CRUDController@DescargarPDF');
 
-Route::get('datatable', 'CRUDController@get_datatable');
+Route::get('datatable', 'CRUDController@datatable');
 
 /*******************************************************************************/
 /*Eliminar index.php de la url de la aplicacion cuando se accede por IP*/
@@ -54,3 +54,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 //https://stackoverflow.com/questions/43585416/how-to-logout-and-redirect-to-login-page-using-laravel-5-4
 //https://github.com/Laraveles/lang-spanish
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
+Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');

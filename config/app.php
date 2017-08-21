@@ -180,6 +180,8 @@ return [
         Barryvdh\DomPDF\ServiceProvider::class,
         Yajra\Datatables\DatatablesServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
+        Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
 
     ],
 
@@ -233,6 +235,8 @@ return [
         'Datatables' => Yajra\Datatables\Facades\Datatables::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
+
 
     ],
 

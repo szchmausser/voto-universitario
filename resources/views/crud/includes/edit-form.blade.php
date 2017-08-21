@@ -1,3 +1,9 @@
+{{ Debugbar::addMessage('CONTENIDO DE LA VARIABLE', '$errors') }}
+{{ Debugbar::info($errors) }}
+
+{{ Debugbar::addMessage('CONTENIDO DE LA VARIABLE', '$crud') }}
+{{ Debugbar::info($crud) }}
+
 @if((Auth::user()->role === 'admin') || (Auth::user()->role === 'supervisor'))
 
 	{{ Form::open(['action' => ['CRUDController@update', $crud->id], 'method' => 'PUT',]) }}

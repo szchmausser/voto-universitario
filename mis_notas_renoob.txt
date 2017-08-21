@@ -1,5 +1,20 @@
+LARAVEL DUSK HOMESTEAD
+http://www.jesusamieiro.com/using-laravel-dusk-with-vagrant-homestead/
+
+PRUEBAS AUTOMATIZADAS LARAVEL
+https://styde.net/pruebas-de-integracion-automatizadas-en-chrome-con-laravel-testtools/
+
+INSTALAR LARAVEL DEBUGBAR
+	https://styde.net/instalar-barra-de-debug-en-laravel/
+	https://github.com/barryvdh/laravel-debugbar
+
+INSTALAR LARAVEL LOG VIEWER
+	https://styde.net/registro-de-errores-laravel-log-viewer/
+	https://github.com/rap2hpoutre/laravel-log-viewer
+
 VARIOS LARAVEL:
-http://victorroblesweb.es/category/desarrollo-web/laravel-5/
+	http://victorroblesweb.es/category/desarrollo-web/laravel-5/
+	https://learninglaravel.net/log-activity-in-a-laravel-app-with-laravel-activitylog
 
 CLONAR MI PROYECTO DESDE GITHUB
 	git clone git://github.com/szchmausser/voto-universitario.git pruebagithub
@@ -13,27 +28,74 @@ CLONAR MI PROYECTO DESDE GITHUB
 	php artisan config:clear
 
 NOTAS GIT
-https://elbauldelprogramador.com/mini-tutorial-y-chuleta-de-comandos-git/
-git status
-git add .
-git commit -m "Mensaje para los commits"
-git commit --amend -m "Corregir el mensaje del ultimo commit (antes de hacer push a github)"
-	- Para enviar el amend: git push --force origin master
-git push origin master
+	https://elbauldelprogramador.com/mini-tutorial-y-chuleta-de-comandos-git/
+	git status
+	git add .
+	git commit -m "Mensaje para los commits"
+	git commit --amend -m "Corregir el mensaje del ultimo commit (antes de hacer push a github)"
+		- Para enviar el amend: git push --force origin master
+	git push origin master
 
 
 INSTALAR HOMESTEAD:
-https://www.youtube.com/playlist?list=PL9MmQZkQEHUmggPlz37fGCTKhdS-mY2dy
+	https://www.youtube.com/playlist?list=PL9MmQZkQEHUmggPlz37fGCTKhdS-mY2dy
 
 PERSONALIZAR SUBLIME TEXT PAR TRABAjAR CON PHP
-https://manuais.iessanclemente.net/index.php/Tutorial_sobre_editor_Sublime_Text_3
 
-https://styde.net/instalar-php-code-sniffer-en-sublime-text/
-luego instalar el plugin php-cs-fixer y ejecutar el analisis del codigo con ctrl+alt+f
-https://styde.net/php-companion-para-sublime-text-3/
-https://packagecontrol.io/packages/SublimeLinter-csslint
+	https://mattstauffer.co/blog/sublime-text-3-for-php-developers
+	https://manuais.iessanclemente.net/index.php/Tutorial_sobre_editor_Sublime_Text_3
 
-https://quickadminpanel.com/blog/course-lesson-1-laravel-and-default-auth/
+	https://styde.net/instalar-php-code-sniffer-en-sublime-text/
+	luego instalar el plugin php-cs-fixer y ejecutar el analisis del codigo con ctrl+alt+f
+	https://styde.net/php-companion-para-sublime-text-3/
+	https://packagecontrol.io/packages/SublimeLinter-csslint
+
+ANALISIS DE SINTAXIS JAVASCRIPT EN SUBLIME TEXT 3 CON SUBLIMELINTER / JSHINT
+
+	Instalar JSHint desde nodejs
+	Instalar Sublime Linter
+	Instalar Linter - JSHint
+
+	El archivo de configuracion de JSHint en sublime text 3 se ubica en /home/vioscar/.config/sublime-text-3/Packages/JSHint/.jshintrc. Este archivo es ignorado por lo cual las reglas que alli aplican no son tomadas en cuenta al momento de analizar los archivos JS. De acuerdo a la configuracion oficial hay 3 maneras en que se puede crear el archivo de configuracion: (http://jshint.com/docs/). Yo he optado por simplemente copiar el archivo de ejemplo y ubicarlo en la raiz del proyecto laravel. De ahora en adelante se aplican las opciones alli indicadas.
+
+	Listado de mensajes de error de JSHint: https://github.com/jshint/jshint/blob/78b79c099fc490d93cd7aef599a1528761e9498d/src/messages.js
+
+ANALISIS DE SINTAXIS JAVASCRIPT EN SUBLIME TEXT 3 CON SUBLIMELINTER / ESLINT
+
+	https://eslint.org/docs/user-guide/getting-started
+	https://github.com/roadhump/SublimeLinter-eslint
+	
+	#############
+	.eslintrc.js
+	#############
+
+		module.exports = {
+		    "env": {
+		        "browser": true,
+		        "node": true
+		    },
+		    "extends": "eslint:recommended",
+		    "rules": {
+				"indent": [0, 2],
+		        "linebreak-style": [
+		            "error",
+		            "unix"
+		        ],
+		        "quotes": [
+		            "off",
+		            "single"
+		        ],
+		        "semi": [
+		            "error",
+		            "always"
+		        ]
+		    }
+		};
+
+	https://eslint.org/docs/2.0.0/rules/indent
+
+CURSO: CREAR PANEL DE ADMINISTRACION EN LARAVEL 5.4
+	https://quickadminpanel.com/blog/course-lesson-1-laravel-and-default-auth/
 
 INSTALAR FONT AWESOME
 	a) instalar nodejs en la compu de desarrollo
