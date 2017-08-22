@@ -1,8 +1,39 @@
 LARAVEL DUSK HOMESTEAD
 http://www.jesusamieiro.com/using-laravel-dusk-with-vagrant-homestead/
+https://www.cloudways.com/blog/laravel-dusk-testing-todo-app/
+
+DATATABLES
+Laravel 5.4 - how to use laravel datatables
+
+DEBUG EN LARAVEL
+	https://laravel.com/docs/5.4/errors
+	https://github.com/rap2hpoutre/laravel-log-viewer
+	https://github.com/barryvdh/laravel-debugbar
+
+		Para crear logs desde los controladores:
+			use Illuminate\Support\Facades\Log;
+		Para acceder a los datos de usuarios logueados en auth:
+			use Illuminate\Support\Facades\Auth;
+		Para acceder a las excepciones
+			use Exception;
+
+	https://laracasts.com/discuss/channels/laravel/using-simple-exception-class-in-try-catch?page=1
+	https://stackoverflow.com/questions/31508223/how-to-properly-catch-php-exceptions-laravel-5-1
+
+	Sin utilizar todavia (identificar que campo ha cambiado para mostarlo en el log:
+		https://stackoverflow.com/questions/28866500/laravel-eloquent-update-just-if-changes-have-been-made
+	Por probar:		
+		https://github.com/spatie/laravel-activitylog
 
 PRUEBAS AUTOMATIZADAS LARAVEL
 https://styde.net/pruebas-de-integracion-automatizadas-en-chrome-con-laravel-testtools/
+
+USUARIOS Y ROLES
+https://quickadminpanel.com/blog/course-lesson-1-laravel-and-default-auth/
+https://laracasts.com/discuss/channels/laravel/which-package-is-best-for-roles-permissions
+https://medium.com/@ezp127/laravel-5-4-native-user-authentication-role-authorization-3dbae4049c8a
+http://itsolutionstuff.com/post/laravel-52-user-acl-roles-and-permissions-with-middleware-using-entrust-from-scratch-tutorialexample.html
+https://scotch.io/tutorials/user-authorization-in-laravel-54-with-spatie-laravel-permission
 
 INSTALAR LARAVEL DEBUGBAR
 	https://styde.net/instalar-barra-de-debug-en-laravel/

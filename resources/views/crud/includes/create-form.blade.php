@@ -7,7 +7,7 @@
 	AGREGAR CLASE AL FORMULARIO CON LARAVEL COLLECTIVE:
 	https://stackoverflow.com/questions/31690937/laravel-add-multiple-classes-when-using-formopen
 	-->
-	{!! Form::open(['action' => ['CRUDController@store'], 'class' => '']) !!}
+	{!! Form::open(['action' => ['CRUDController@store'], 'class' => '', 'id' => 'form_create']) !!}
 
 	<div class="form-row">
 		

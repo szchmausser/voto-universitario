@@ -13,6 +13,20 @@ class CRUDTest extends DuskTestCase
      *
      * @return void
      */
+
+    public function testRegistroUsuario()
+    {
+        $this->browse(function ($browser) {
+            $browser->visit('register')
+                ->type('name', 'Tayor Otwell')
+                ->type('email', 'taylor@laravel.com')
+                ->type('password', 'ahmedkhan')
+                ->type('password_confirmation', 'ahmedkhan')
+                ->press('Crear cuenta')
+                ->assertPathIs('/crud');
+        });
+    }
+
     public function testLogin()
     {
         $this->browse(function ($browser) {

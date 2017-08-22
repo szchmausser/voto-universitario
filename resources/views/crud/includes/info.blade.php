@@ -15,3 +15,12 @@
 		{{ Session::get('info') }}
 	</div>
 @endif
+
+@if(Session::has('warning'))
+	<div class="alert alert-warning">
+		<button type="button" class="close" data-dismiss="alert">
+			<span>&times;</span>
+		</button>
+		{{ Session::get('warning') }}
+	</div>
+@endif

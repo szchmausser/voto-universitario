@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use App\Crud;
 use App\Http\Requests\CrudRequest;
 use Datatables;
+use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use PDF;
 
 //http://appdividend.com/2017/05/02/laravel-5-4-crud-example-scratch/
@@ -91,8 +94,14 @@ class CRUDController extends Controller
      */
     public function edit($id)
     {
-        $crud = Crud::find($id);
-        return view('crud.edit', compact('crud', 'id'));
+        try {
+            $crud = Crud::find($id);
+            Log::info('El usuario '.Auth::user()->name.' esta editando el registro: '.$crud->id.', '.$crud->NOMBRES.', '.$crud->APELLIDOS.', '.$crud->UNIVERSIDAD.', '.$crud->VOTO.', '.$crud->TELEFONO);
+            return view('crud.edit', compact('crud', 'id', 'user'));
+        } catch (Exception $e) {
+            Log::debug('El usuario '.Auth::user()->name.' intento editar el registro '.$id.' , pero ocurrio una excepcion: '.$e);
+            return redirect()->to('crud')->with('warning', 'No es posible editar el registro especificado');
+        }
     }
 
     /**
@@ -108,8 +117,10 @@ class CRUDController extends Controller
         $crud = Crud::find($id);
         //Capturar todos los datos que vienen desde la validacion correspondientes a ese registro
         $data = request()->all();
+        //dd ($data);
         //Almacenar los nuevos valores en la BD
         $crud->update($data);
+        Log::info('El usuario '.Auth::user()->name.' ha editado el registro: '.$crud->id.', '.request()->nombres.', '.request()->apellidos.', '.request()->universidad.', '.request()->voto.', '.request()->telefono);
         return redirect()->to('crud')->with('info', 'El registro fue editado exitosamente');
     }
 
